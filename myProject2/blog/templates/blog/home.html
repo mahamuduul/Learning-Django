@@ -9,5 +9,24 @@
     <h1>Welcome to My Blog</h1>
     {% comment %} single variable {% endcomment %}
     <p>Name: {{ name }}</p>
+    <p>Age: {{ age }}</p>
+    {% comment %} access list {% endcomment %}
+    <h2>Skills:</h2>
+    <ul>
+        {% for skill in skills %}
+            <li>{{ skill }}</li>
+        {% endfor %}
+    </ul>
+    <h2>Object</h2>
+    <p>Name: {{ user.name }}</p>
+    <p>Age: {{ user.age }}</p>
+    <h2>Dictionary</h2>
+    <p>Title: {{ blog.title }}</p>
+    <p>Content: {{ blog.content }}</p>
+    <p>Published Date: {{ blog.published_date }}</p>   
+    
+    <h2>Default value</h2>
+    <p>default value show:{{empty_value|default:"No value provided"}}</p>
+    <p>default value show:{{empty_value|default_if_none:"No value provided"}}</p>
 </body>
 </html>
