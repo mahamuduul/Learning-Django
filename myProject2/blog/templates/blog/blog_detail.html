@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>title:{{ post.title|upper }}</h1>
+    <h1>title:{{ post.title|lower }}</h1>
+    <h1>title:{{ post.title|title }}</h1>
+    <h1>title:{{ post.title|capfirst }}</h1>
+    <h1>title:{{ post.title|truncatechars:5 }}</h1>
+    <h1>title:{{ post.title|truncatewords:3 }}</h1>
+    <h1>title:{{ post.title|linebreaks }}</h1>
+    <hr>
+
+    <h1>Price: ${{ post.price }}</h1>
+    <h1>Added price: ${{ post.price|add:10 }}</h1>
+
+    {% if post.number_of_comments|divisibleby:2 %}
+        <p>This post has an even number of comments.</p>
+    {% else %}
+        <p>This post has an odd number of comments.</p>
+    {% endif %}
+
+
+    <p>{{ post.content }}</p>
+    <p>Published on: {{ post.published_date }}</p>
+
+    <h1>Post Tags Filters</h1>
+    <p>Tags: {{ post.post_tags|join:", " }}</p>
+    <p>Tags: {{ post.post_tags|first }}</p>
+    <p>Tags: {{ post.post_tags|last }}</p>
+    <p>Tags: {{ post.post_tags|length }}</p>
+    <p>Tags: {{ post.post_tags|slice:":2" }}</p>
+
+    <hr>
+
+    <h1>Author: {{ post.author|yesno:"Yes,No,MayBe" }}</h1>
+    <hr>
+
+    <h1>Pluralize</h1>
+    <p>You have {{ post.number_of_comments }} comment{{ post.number_of_comments|pluralize }}.</p>
+
+    <hr>
+    <h1>Encoding</h1>
+    <p>{{ post.content|urlencode }}</p>
+   
+
+
+
+
+</body>
+</html>
