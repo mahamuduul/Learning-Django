@@ -38,3 +38,34 @@ def blog_detail(request):
     }
     
     return render(request, 'blog/blog_detail.html', {'post': post})
+
+
+def blog_list(request):
+    posts = [
+        {
+            "title": "My First Blog Post",
+            "content": "This is the content of my first blog post.",
+            "published_date": datetime(2024, 6, 1),
+            "author": "Mahamudul Hasan",
+            "is_featured": True
+        },
+        {
+            "title": "My Second Blog Post",
+            "content": "This is the content of my second blog post.",
+            "published_date": datetime(2024, 6, 2),
+            "author": "Mahamudul Hasan",
+            "is_featured": False
+        },
+        {
+            "title": "My Third Blog Post",
+            "content": "This is the content of my third blog post.",
+            "published_date": datetime(2024, 6, 3),
+            "author": "Mahamudul Hasan",
+            "is_featured": False
+        },
+    ]
+
+    context = {
+        'posts': posts
+    }
+    return render(request, 'blog/blog_list.html', context)
