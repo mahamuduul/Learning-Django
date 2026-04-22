@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Home - My Blog{% endblock %}
+
+{% block content %}
+    <h1>Welcome to My Blog</h1>
+    <p>This is the home page of my blog. Here you can find the latest posts and updates.</p>
+    <hr>
+    <form action="">
+        {% csrf_token %}
+
+        <label for="search">Search:</label>
+        <input type="text" id="search" name="search" placeholder="Search for    posts...">
+        <button onclick="showAlert()">Search</button>
+
+
+    </form>
+    <img style="width: 100%; max-width: 500px; height: auto;" src='{% static "images/IMG_5863.JPG.jpeg" %}' alt="Blog author portrait with a calm and welcoming expression, facing the camera in a casual setting with a soft background and natural light">
+
+    <button onclick="showAlert()">Show Alert</button>
+{% endblock %}
+

@@ -20,6 +20,27 @@
         {% endfor %}
     </ul>
 
+    {%with total_posts=posts|length%}
+        <p>Total posts: {{ total_posts }}</p>
+    {% endwith %}
+
+    <h2>Cycle</h2>
+    <table border="1">
+        <tr>
+            <th>Title</th>
+            <th>Author</th>
+        </tr>
+        {% for post in posts %}
+        <tr style="background-color: {% cycle 'lightgray' 'white' %};">
+            <td>{{ post.title }}</td>
+            <td>{{ post.author }}</td>
+        </tr>
+        {% endfor %}
+
+    </table>
+
+    <hr>
+    
 
 </body>
 </html>
