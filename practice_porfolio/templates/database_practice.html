@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <section class="database-practice">
+        <h1>Database Practice</h1>
+        <ul>
+            {% for project in projects %}
+                <li>{{ project.name }} - {{ project.description }}</li>
+            {% endfor %}
+        </ul>
+    </section>
+{% endblock %}
