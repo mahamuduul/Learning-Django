@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% block content %}
+{% load static %}
+
+<section class="hero">
+    <div class="hero-content">
+        <p class="hero-kicker">Portfolio</p>
+        <h1>Building clean and practical web experiences</h1>
+        <p>I create Django-powered websites focused on performance, readability, and user-friendly design.</p>
+        <a class="btn" href="{% url 'contact' %}">Let's Work Together</a>
+    </div>
+    <div class="hero-media">
+        <img src="{% static 'images/project4.jpg' %}" alt="Featured project preview">
+    </div>
+</section>
+
+<section class="projects-section">
+    <h2>Featured Projects</h2>
+    <div class="projects">
+        <article class="project-card">
+            <img src="{% static 'images/project1.jpg' %}" alt="Project 1">
+            <div class="project-body">
+                <h3>Project Title 1</h3>
+                <p>Short description of the project.</p>
+            </div>
+        </article>
+        <article class="project-card">
+            <img src="{% static 'images/project2.jpg' %}" alt="Project 2">
+            <div class="project-body">
+                <h3>Project Title 2</h3>
+                <p>Short description of the project.</p>
+            </div>
+        </article>
+        <article class="project-card">
+            <img src="{% static 'images/project3.jpg' %}" alt="Project 3">
+            <div class="project-body">
+                <h3>Project Title 3</h3>
+                <p>Short description of the project.</p>
+            </div>
+        </article>
+        <article class="project-card">
+            <img src="{% static 'images/project4.jpg' %}" alt="Project 4">
+            <div class="project-body">
+                <h3>Project Title 4</h3>
+                <p>Short description of the project.</p>
+            </div>
+        </article>
+    </div>
+</section>
+{% endblock %}
